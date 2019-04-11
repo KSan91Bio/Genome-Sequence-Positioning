@@ -1,2 +1,16 @@
 # Genome-Sequence-Positioning
 Programs created for extracting the chromosomes of the genome sequence and placing positions for the nucleotides A,C,G,T
+
+The first program, Chromo_Split.py is used the vcf file extracted from the 1000 genomes website. The zipped up file will be provided in the repository. After the vcf file has been extracted from the zip file, it will be used in the python program to separate the file into smaller files according to chromosome. For this process, a second file called hg19_length.list is used to separate the vcf file into the appropriate chromosome. 
+
+The first program to be used is Chromo_Split.py, where it will use the hg19_length.list file to create a dictionary for each chromosome as it reads each line in the file. Within the for loop, new files will be created according to the chromosome obtained within that for loop and stored in the dictionary.
+
+After each chromsome has been placed in their own dictionary from the hg19_length.list file, the vcf file will be used to store the vcf information of each chromosome. A for loop will be used to read each line of the vcf file to find the information of each chromosome. within the for loop, an if statement is used where if the line begins with #, the for loop will continue. This is done for the first section of the vcf file, where the lines begin with the #, providing informaiton about the file that is not needed for the extraction of the required information. As the for loop reads every line, the lines will be delimited by tab and store the first variable, chrom, representing the chromosome, into the tokens variable. Using the dictionaries from the previous for loop, the chromosomes match, the line will be stored in the dictionary and will repeat for every chromosome.
+
+The last for loop is used to close the vcf files created that contain the information for each chromosome from the large vcf in the second for loop to release the memory and complete the program.
+
+The second program, 1000_Genome_Sequence.py, is used obtain the length of every chromosome in the human genome and place the appropriate nucleotide at the position, whether it's the reference allele or alternate allele. A new file for the chromosome is created at the beginning of the program that will store the length of the chromosome. Four dictionaries are created at the start, where each will contain the length of the chromosome. This is done in the for loop, where the hg19_length.list will be called to use the length variable as the length of the dictionary for each dictionary.
+
+The second for loop is used to open the vcf file of the chromosome being used for the program. The for loop will read the lines of the file, and split them by tab, and stores the first five variables: chrom, pos, rsid, ref_str, and alt_str into the token variables that will be used for the next part of the for loop. The if statement of the length of alt_str not equaling 1 or length of ref_str not equaling 1 is used to continue the for loop as the dictionaries contain zeroes. The last part are a sequence of eight if statement, the first four representing the reference allele and if it matches the appropriate value, place it in the position. This will continue until it finishes and the file created at the beginnig will close, ending the program. 
+
+(Editing to make the process concise)
