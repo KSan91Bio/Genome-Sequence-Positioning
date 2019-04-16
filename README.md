@@ -1,7 +1,7 @@
 # Genome-Sequence-Positioning
 Programs created for extracting the chromosomes of the genome sequence and placing positions for the nucleotides A,C,G,T
 
-The first part is to obtain the files required for the programs. The first file to obtain is the vcf file from the 1000 genomes website. The second file to obtain is the length of the chromosomes. The file is provided in the repository.
+The first part is to obtain the files required for the programs. The first file to obtain is the vcf file from the 1000 genomes website. The link is ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase1/analysis_results/integrated_call_sets/ and select the file called ALL.wgs.integrated_phase1_v3.20101123.snps_indels_sv.sites.vcf.gz. The second file to obtain is the length of the chromosomes. The file for the length of the chromosomes is provided in the repository.
 
 The first program to be used is Chromo_Split.py, where it will use the hg19_length.list file to create a dictionary for each chromosome as it reads each line in the file. Within the for loop, new files will be created according to the chromosome obtained within that for loop and stored in the dictionary.
 
